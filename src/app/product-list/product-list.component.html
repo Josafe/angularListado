@@ -2,18 +2,19 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>nombre</th>
-        <th>apellido</th>
+        <th>nom</th>
+        <th>cognom</th>
         <th>email</th>
         <th>dni</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor = "let products of products">
+      <tr [title]="products.name + 'details'" *ngFor="let products of products">
         <td>{{ products.name }}</td>
         <td>{{ products.surname }}</td>
         <td>{{ products.email }}</td>
         <td>{{ products.id }}</td>
+        <button type="button" (click)="detalls()">Detalls</button>
       </tr>
     </tbody>
 

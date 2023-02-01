@@ -57,6 +57,10 @@ export class ProductListComponent {
     ];
   }
 
+  detalls() {
+    window.alert('Detalls: ' + products[]);
+  }
+
   /*
   share() {
     window.alert('The product has been shared!');
