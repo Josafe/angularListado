@@ -9,14 +9,20 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Bucle per a printejar tots els usuaris dinte la taula -->
       <tr [title]="products.name + 'details'" *ngFor="let products of products">
         <td>{{ products.name }}</td>
         <td>{{ products.surname }}</td>
         <td>{{ products.email }}</td>
         <td>{{ products.id }}</td>
+
         <button type="button" (click)="detalls()">Detalls</button>
       </tr>
     </tbody>
+
+    <button (click)="afegirUsuari(task.value)">Afegir Usuari</button>
+
+    <input type="text" placeholder="Afegix nou usuari" #task />
 
     <!-- <h2>Products</h2>
 <div *ngFor="let product of products">

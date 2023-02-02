@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { products } from '../products';
 
@@ -11,6 +11,11 @@ export class ProductListComponent {
   products: any;
 
   constructor() {
+    name: String;
+    surname: String;
+    email: String;
+    id: String;
+
     this.products = [
       {
         name: 'Jhon',
@@ -58,7 +63,12 @@ export class ProductListComponent {
   }
 
   detalls() {
-    window.alert('Detalls: ' + products[]);
+    window.alert('Detalls: ' + products);
+  }
+
+  afegirUsuari(item:string) {
+    console.warn(item);
+
   }
 
   /*
