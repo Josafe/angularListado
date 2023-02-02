@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-
 import { products } from '../products';
 
 @Component({
@@ -8,14 +7,10 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products: any;
+  products: any[] = [];
 
   constructor() {
-    name: String;
-    surname: String;
-    email: String;
-    id: String;
-
+    
     this.products = [
       {
         name: 'Jhon',
@@ -60,15 +55,22 @@ export class ProductListComponent {
         id: '2031145J',
       },
     ];
+    
+    detalls(products) {
+      window.alert(`Nombre: ${products.name}`);
+    }
   }
 
-  detalls() {
-    window.alert('Detalls: ' + products);
-  }
+ 
 
-  afegirUsuari(item:string) {
+  afegirUsuari(item: string) {
     console.warn(item);
-
+    this.products.push({
+      name: this.products,
+      surname: this.products,
+      email: this.products,
+      id: this.products,
+    });
   }
 
   /*
