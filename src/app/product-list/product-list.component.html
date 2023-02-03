@@ -1,5 +1,6 @@
 <div class="container">
   <table class="table table-striped">
+    <!-- Capçalera de la taula -->
     <thead>
       <tr>
         <th>nom</th>
@@ -8,6 +9,7 @@
         <th>dni</th>
       </tr>
     </thead>
+
     <tbody>
       <!-- Bucle per a printejar tots els usuaris dinte la taula -->
       <tr [title]="products.name + 'details'" *ngFor="let products of products">
@@ -16,7 +18,7 @@
         <td>{{ products.email }}</td>
         <td>{{ products.id }}</td>
 
-        <button type="button" (click)="detalls()">Detalls</button>
+        <button type="button" (click)="detalls(products)">Detalls</button>
       </tr>
     </tbody>
 
@@ -39,11 +41,6 @@
   <app-product-alerts [product]="product" (notify)="onNotify()">
   </app-product-alerts>
 </div>
---!>
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
 -->
   </table>
 </div>

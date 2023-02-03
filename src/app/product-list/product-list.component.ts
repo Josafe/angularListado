@@ -7,10 +7,9 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products: any[] = [];
+  products: any[];
 
   constructor() {
-    
     this.products = [
       {
         name: 'Jhon',
@@ -55,13 +54,11 @@ export class ProductListComponent {
         id: '2031145J',
       },
     ];
-    
-    detalls(products) {
-      window.alert(`Nombre: ${products.name}`);
-    }
   }
-
- 
+  
+  detalls(product: any) {
+    window.alert(`Nom: ${product.name} ` + ` Cognom: ${product.surname}`);
+  }
 
   afegirUsuari(item: string) {
     console.warn(item);
