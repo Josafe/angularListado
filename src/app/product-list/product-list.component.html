@@ -23,12 +23,16 @@
       </tr>
     </tbody>
 
+    <!-- Input text on introduir les dades de nous usuaris -->
     <input type="text" placeholder="Nom" #name />
     <input type="text" placeholder="Cognom" #surname />
     <input type="text" placeholder="Email" #email />
     <input type="text" placeholder="DNI" #id />
 
-    <button (click)="afegirUsuari(name.value, surname.value, email.value, id.value)">
+    <!-- Boto vinculat al metode AfegirUsuari el qual agafa les dades dels input texts superiors -->
+    <button
+      (click)="afegirUsuari(name.value, surname.value, email.value, id.value)"
+    >
       Afegir Usuari
     </button>
 
