@@ -1,5 +1,5 @@
 <div class="container">
-  <table class="table table-striped">
+  <table class="table table-striped" *ngIf="showList">
     <!-- Capçalera de la taula -->
     <thead>
       <tr>
@@ -22,35 +22,27 @@
         <button type="button" (click)="detalls(users)">Detalls</button>
       </tr>
     </tbody>
-
+  </table> 
+  
+  <!-- Input text on introduir les dades de nous usuaris -->
+  <div class="botons-baix" style="text-align: center;">
     <!-- Input text on introduir les dades de nous usuaris -->
-    <input type="text" placeholder="Nom" #name />
-    <input type="text" placeholder="Cognom" #surname />
-    <input type="text" placeholder="Email" #email />
-    <input type="text" placeholder="DNI" #id />
+    <input class="input-gran" type="text" placeholder="Nom" #name />
+    <input class="input-gran" type="text" placeholder="Cognom" #surname />
+    <input class="input-gran" type="text" placeholder="Email" #email />
+    <input class="input-gran" type="text" placeholder="DNI" #id />
 
     <!-- Boto vinculat al metode AfegirUsuari el qual agafa les dades dels input texts superiors -->
     <button
+      class="botogran"
       (click)="afegirUsuari(name.value, surname.value, email.value, id.value)"
     >
       Afegir Usuari
     </button>
 
-    <!-- <h2>Products</h2>
-<div *ngFor="let product of products">
-  <h3>
-    <a [title]="product.name + 'details'">
-      {{ product.name }}
-    </a>
-  </h3>
-
-  <p *ngIf="product.description">Description:{{ product.description }}</p>
-
-  <button type="button" (click)="share()">Share</button>
-
-  <app-product-alerts [product]="product" (notify)="onNotify()">
-  </app-product-alerts>
-</div>
--->
-  </table>
+    <!-- Boto vinculat a la variable showList de la classe ProductListComponent per a mostrar / amagar la llista -->
+    <button class="botogran" (click)="showList = !showList">
+      {{ showList ? 'Amagar' : 'Mostrar' }} Llista
+    </button>
+  </div>
 </div>

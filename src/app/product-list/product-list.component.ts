@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ProductListComponent {
   /*Llista declarada*/
   users: any[];
+  showList = false;
 
   /*Constructor*/
   constructor() {
@@ -71,6 +72,7 @@ export class ProductListComponent {
     /* De moment no printeja les dades en una finestra externa però el metode si que rep les dades ja que l'alert si les mostra */
 
     const ventana = window.open('', '', 'width=400,height=400');
+
     if (ventana) {
       ventana.document.write(
         `Nom: ${product.name} ` +
@@ -84,12 +86,12 @@ export class ProductListComponent {
   /* Metode per afegir usuaris */
   afegirUsuari(name: string, surname: string, email: string, id: string) {
     this.users.push({
-    name,
-    surname,
-    email,
-    id
+      name,
+      surname,
+      email,
+      id,
     });
-    }
+  }
 }
 
 /*

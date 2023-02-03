@@ -1,5 +1,24 @@
+.botogran {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
 
+.input-gran {
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+}
 
+.botons-baix {
+  position: absolute;
+  bottom: 0;
+}
+
+.inputs-baix {
+  position: absolute;
+  bottom: 0;
+}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
