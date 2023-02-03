@@ -12,20 +12,25 @@
 
     <tbody>
       <!-- Bucle per a printejar tots els usuaris dinte la taula -->
-      <tr [title]="products.name + 'details'" *ngFor="let products of products">
-        <td>{{ products.name }}</td>
-        <td>{{ products.surname }}</td>
-        <td>{{ products.email }}</td>
-        <td>{{ products.id }}</td>
+      <tr [title]="users.name + 'details'" *ngFor="let users of users">
+        <td>{{ users.name }}</td>
+        <td>{{ users.surname }}</td>
+        <td>{{ users.email }}</td>
+        <td>{{ users.id }}</td>
 
         <!-- Boto vinculat al metode detalls del TypeScript -->
-        <button type="button" (click)="detalls(products)">Detalls</button>
+        <button type="button" (click)="detalls(users)">Detalls</button>
       </tr>
     </tbody>
 
-    <button (click)="afegirUsuari(task.value)">Afegir Usuari</button>
+    <input type="text" placeholder="Nom" #name />
+    <input type="text" placeholder="Cognom" #surname />
+    <input type="text" placeholder="Email" #email />
+    <input type="text" placeholder="DNI" #id />
 
-    <input type="text" placeholder="Afegix nou usuari" #task />
+    <button (click)="afegirUsuari(name.value, surname.value, email.value, id.value)">
+      Afegir Usuari
+    </button>
 
     <!-- <h2>Products</h2>
 <div *ngFor="let product of products">

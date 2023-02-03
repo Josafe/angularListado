@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { products } from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -7,10 +6,13 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products: any[];
+  /*Llista declarada*/
+  users: any[];
 
+  /*Constructor*/
   constructor() {
-    this.products = [
+    /*Plenem la llista declarada anteriorment amb les dades del repte*/
+    this.users = [
       {
         name: 'Jhon',
         surname: 'Doe',
@@ -58,7 +60,7 @@ export class ProductListComponent {
 
   /* Metode per detallar les dades de l'usuari */
   detalls(product: any) {
-    /* Amb el window.alert em mostra les dades, el que significa que al clicar el boto esta agafant les dades de la llista */
+    /* Amb el window.alert ens mostra les dades, el que significa que al clicar el boto esta agafant les dades de la llista */
     window.alert(
       `Nom: ${product.name} ` +
         ` Cognom: ${product.surname}` +
@@ -66,8 +68,8 @@ export class ProductListComponent {
         ` DNI: ${product.id}`
     );
 
-    /* De moment no printeja les dades en una finestra externa però el metode si que rep les dades */
-    
+    /* De moment no printeja les dades en una finestra externa però el metode si que rep les dades ja que l'alert si les mostra */
+
     const ventana = window.open('', '', 'width=400,height=400');
     if (ventana) {
       ventana.document.write(
@@ -80,16 +82,14 @@ export class ProductListComponent {
   }
 
   /* Metode per afegir usuaris */
-
-  afegirUsuari(item: string) {
-    console.warn(item);
-    this.products.push({
-      name: this.products,
-      surname: this.products,
-      email: this.products,
-      id: this.products,
+  afegirUsuari(name: string, surname: string, email: string, id: string) {
+    this.users.push({
+    name,
+    surname,
+    email,
+    id
     });
-  }
+    }
 }
 
 /*
