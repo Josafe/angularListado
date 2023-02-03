@@ -56,11 +56,19 @@ export class ProductListComponent {
     ];
   }
 
-  /* Metode per detallar les dades de l'usuari */ 
-
+  /* Metode per detallar les dades de l'usuari */
   detalls(product: any) {
-    const ventana = window.open('', '', 'width=400,height=400');
+    /* Amb el window.alert em mostra les dades, el que significa que al clicar el boto esta agafant les dades de la llista */
+    window.alert(
+      `Nom: ${product.name} ` +
+        ` Cognom: ${product.surname}` +
+        ` Email: ${product.email}` +
+        ` DNI: ${product.id}`
+    );
 
+    /* De moment no printeja les dades en una finestra externa però el metode si que rep les dades */
+    
+    const ventana = window.open('', '', 'width=400,height=400');
     if (ventana) {
       ventana.document.write(
         `Nom: ${product.name} ` +
@@ -68,7 +76,6 @@ export class ProductListComponent {
           ` Email: ${product.email}` +
           ` DNI: ${product.id}`
       );
-    } else {
     }
   }
 
