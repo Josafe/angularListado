@@ -55,10 +55,24 @@ export class ProductListComponent {
       },
     ];
   }
-  
+
+  /* Metode per detallar les dades de l'usuari */ 
+
   detalls(product: any) {
-    window.alert(`Nom: ${product.name} ` + ` Cognom: ${product.surname}`);
+    const ventana = window.open('', '', 'width=400,height=400');
+
+    if (ventana) {
+      ventana.document.write(
+        `Nom: ${product.name} ` +
+          ` Cognom: ${product.surname}` +
+          ` Email: ${product.email}` +
+          ` DNI: ${product.id}`
+      );
+    } else {
+    }
   }
+
+  /* Metode per afegir usuaris */
 
   afegirUsuari(item: string) {
     console.warn(item);
@@ -69,8 +83,9 @@ export class ProductListComponent {
       id: this.products,
     });
   }
+}
 
-  /*
+/*
   share() {
     window.alert('The product has been shared!');
   }
@@ -78,7 +93,6 @@ export class ProductListComponent {
     window.alert('You will be notified when the product goes on sale');
   }
 */
-}
 
 /*
 Copyright Google LLC. All Rights Reserved.
